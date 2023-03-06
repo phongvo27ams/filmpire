@@ -5,18 +5,12 @@ import { Divider, List, ListItem, ListItemText, ListItemIcon, ListSubheader, Box
 
 import { useGetGenresQuery } from '../../services/TMDB';
 import useStyles from './styles';
+import genreIcons from '../../assets/genres';
 
 const categories = [
     { label: 'Popular', value: 'popular' },
     { label: 'Top Rated', value: 'top_rated' },
     { label: 'Upcoming', value: 'upcoming' }
-];
-
-const demoCategories = [
-    { label: 'Comedy', value: 'comedy' },
-    { label: 'Action', value: 'action' },
-    { label: 'Horror', value: 'horror' },
-    { label: 'Animation', value: 'animation' }
 ];
 
 const redLogo = 'https://fontmeme.com/permalink/210930/8531c658a743debe1e1aa1a2fc82006e.png';
@@ -47,7 +41,7 @@ const Sidebar = ({ setMobileOpen }) => {
                     <Link key={value} className={classes.links} to="/">
                         <ListItem onClick={() => { }} button>
                             <ListItemIcon>
-                                <img src={redLogo} className={classes.genreImages} height={30} />
+                                <img src={genreIcons[label.toLowerCase()]} className={classes.genreImages} height={30} />
                             </ListItemIcon>
 
                             <ListItemText primary={label} />
@@ -69,7 +63,7 @@ const Sidebar = ({ setMobileOpen }) => {
                     <Link key={name} className={classes.links} to="/">
                         <ListItem onClick={() => { }} button>
                             <ListItemIcon>
-                                <img src={redLogo} className={classes.genreImages} height={30} />
+                                <img src={genreIcons[name.toLowerCase()]} className={classes.genreImages} height={30} />
                             </ListItemIcon>
 
                             <ListItemText primary={name} />
