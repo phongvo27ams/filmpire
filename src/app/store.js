@@ -6,7 +6,7 @@ import genreOrCategoryReducer from '../features/currentGenreOrCategory';
 export default configureStore({
     reducer: {
         [tmdbApi.reducerPath]: tmdbApi.reducer,
-        currenGenreOrCategory: genreOrCategoryReducer
+        currentGenreOrCategory: genreOrCategoryReducer
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(tmdbApi.middleware)
